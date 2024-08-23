@@ -10,3 +10,10 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+#config de spring app se co the connect to bucket duoc tao tren aws
+#bucket: noi ma se luu tru nhung file ma ta upload len
+aws:
+  s3:
+    bucketName: cloud-storage-bucket
+    accessKey: AKIATX3PICUAHKAYWG7F
+    secretKey: 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
