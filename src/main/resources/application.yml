@@ -10,10 +10,26 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+  # config size to upload file
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:9990/realms/master/protocol/openid-connect/certs
+
 #config de spring app se co the connect to bucket duoc tao tren aws
 #bucket: noi ma se luu tru nhung file ma ta upload len
-aws:
-  s3:
-    bucketName: cloud-storage-bucket
-    accessKey: AKIATX3PICUAHKAYWG7F
-    secretKey: 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
+#info of bucket and info usser to link aws
+#accessKey and secret key la part of IAM(Identity and access management)
+#athenticate request to AWS services such as AWS S3
+app:
+  aws:
+    s3:
+      bucketName: cloud-storage-bucket
+      accessKey: AKIATX3PICUAHKAYWG7F
+      secretKey: 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
+
